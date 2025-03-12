@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProLink Connect - Services</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/Logo.jpg" alt="ProLink">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#how-it-works">How It Works</a></li>
+                <li><a href="index.html#about-us">About</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="dropdown">
+            <a href="#" class="account-btn">Sign Up</a>
+            <div class="dropdown-menu">
+                <a href="#" class="dropdown-item"><i class="fas fa-user-tie"></i>Sign Up as Pro</a>
+                <a href="#" class="dropdown-item"><i class="fas fa-user"></i>Sign Up as Client</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#" class="login-signup-btn">Login</a>
+            <div class="dropdown-menu">
+                 <a href="#" class="dropdown-item"><i class="fas fa-user-tie"></i>Login as Pro</a>
+                 <a href="#" class="dropdown-item"><i class="fas fa-user"></i>Login as Client</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="services-hero">
+        <div class="services-hero-content">
+            <h1>Professional Services at Your Fingertips</h1>
+            <p>Find trusted professionals for all your home and business needs</p>
+            <div class="search-filter">
+                <input type="text" placeholder="What service do you need?">
+                <select id="category-filter">
+                    <option value="">All Categories</option>
+                    <option value="maintenance">Home Maintenance</option>
+                    <option value="landscaping">Outdoor Services</option>
+                    <option value="logistics">Moving & Delivery</option>
+                    <option value="decoration">Home Improvement</option>
+                    <option value="installation">Assembly & Installation</option>
+                </select>
+                <button>Search</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-categories">
+        <div class="categories-grid">
+            <div class="category-card" data-category="maintenance">
+                <i class="fa-solid fa-hammer"></i>
+                <h3>Home Repairs</h3>
+                <p>Professional fixes for every home need</p>
+            </div>
+            <div class="category-card" data-category="landscaping">
+                <i class="fa-solid fa-person-digging"></i>
+                <h3>Outdoor Help</h3>
+                <p>Landscaping and exterior maintenance</p>
+            </div>
+            <div class="category-card" data-category="logistics">
+                <i class="fa-solid fa-truck-fast"></i>
+                <h3>Moving</h3>
+                <p>Reliable moving and delivery services</p>
+            </div>
+            <div class="category-card" data-category="decoration">
+                <i class="fa-solid fa-paint-roller"></i>
+                <h3>Painting</h3>
+                <p>Transform your space with professional painting</p>
+            </div>
+            <div class="category-card" data-category="installation">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+                <h3>Assembly</h3>
+                <p>Expert assembly and setup services</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-listings">
+        <div class="service-grid" id="serviceListings">
+            <!-- Dynamic service listings will be populated here -->
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="#">About Us</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact Us</a>
+            </div>
+            <p>© 2024 ProLink. All rights reserved.</p>
+            <div class="social-media">
+                <a href="#" target="_blank" class="social-icon facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" target="_blank" class="social-icon linkedin"><i class="fab fa-linkedin"></i></a>
+                <a href="#" target="_blank" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="services.js"></script>
+</body>
+</html>
