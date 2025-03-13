@@ -21,31 +21,55 @@ header {
   padding: 10px 10%;
   background-color: #0A222E;
   border-bottom: 1px solid #0A222E;
-  position: sticky; /* Make the header */
-  top: 0;  /* Stick to the top */
-  z-index: 1000; /* Ensure it stays above other content */
-  transition: top 0.3s; /* Smooth transition when appearing/disappearing */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: top 0.3s;
 }
 
 .logo img {
   height: 50px;
 }
 
+/* Hamburger Menu */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  right: 10%;
+  top: 15px;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+  flex-grow: 1;
+}
+
 .nav-links {
   list-style: none;
   display: flex;
   gap: 20px;
+  justify-content: flex-end;
+  flex-grow: 1;
 }
 
 .nav-links li {
   display: inline;
 }
+
 .nav-links a {
   text-decoration: none;
   color: white;
   font-weight: bold;
-  position: relative; /* Needed for underline effect */
-  transition: color 0.3s ease; /* Smooth transition */
+  position: relative;
+  transition: color 0.3s ease;
 }
 
 .nav-links a::after {
@@ -53,7 +77,7 @@ header {
   display: block;
   width: 100%;
   height: 2px;
-  background-color: #6AB8BD; /* Orange underline */
+  background-color: #6AB8BD;
   position: absolute;
   left: 0;
   bottom: -3px;
@@ -61,93 +85,134 @@ header {
   transition: transform 0.3s ease-in-out;
 }
 
-.nav-links a:hover {
-  color: white; /* Keep text white */
-}
-
 .nav-links a:hover::after {
-  transform: scaleX(1); /* Expand underline */
+  transform: scaleX(1);
 }
 
-
-.account-btn {
-  padding: 10px 20px;
-  border: 2px solid ;
+.account-btn, .login-signup-btn {
+  padding: 10px 15px;
+  border: 2px solid #0A222E;
   border-radius: 5px;
   color: #0A222E;
   text-decoration: none;
   font-weight: bold;
   background-color: #6AB8BD;
-   /* Pushes the button to the far right */
+  transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
-.account-btn:hover {
+.account-btn:hover, .login-signup-btn:hover {
   background-color: #6AB8BD;
   color: #0A222E;
   border: 2px solid #0A222E;
-  
 }
+
+/* Align Login & Sign Up in a Row */
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
 /* Dropdown Styles */
 .dropdown {
   position: relative;
 }
 
-.login-signup-btn {
-  padding: 10px 20px;
-  border: 2px solid #0A222E;
-  border-radius: 5px;
-  color: #0A222E;
-  text-decoration: none;
-  font-weight: bold;
-  cursor: pointer;
-  background-color: #6AB8BD;
-}
-
-.login-signup-btn:hover {
-  background-color: #6AB8BD;
-  color: #0A222E;
-  border: 2px solid #0A222E;
-}
-
 .dropdown-menu {
   display: none;
   position: absolute;
-  top: 100%; /* Adjust dropdown position */
+  top: 100%;
   right: 0;
   background-color: #C9C9C9;
-  border: 1px solid #C9C9C9;
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 100;
   width: 200px;
+  padding: 10px 0;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
 }
 
 .dropdown-item {
-  padding: 10px 15px;
-  text-decoration: none;
-  color: #333;
-  font-size: 14px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: space-between;
+  gap: 10 px;
+  padding: 12px 20px;
+  text-decoration: none;
+  color: #0A222E;
+  font-weight: bold;
   transition: background-color 0.3s ease;
 }
 
 .dropdown-item i {
-  font-size: 16px;
-  color:#0A222E;
+  font-size: 18px;
+  color: #0A222E;
+  transition: color 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #6AB8BD;
 }
 
 .dropdown-item:hover i {
-  background-color: #C9C9C9;
-  color: #6AB8BD;
+  color: white;
 }
 
-/* Show dropdown on hover */
-.dropdown:hover .dropdown-menu {
-  display: block;
-  color: #6AB8BD;
+/* Stack Dropdown Items in Two Rows with Space */
+.dropdown-menu a {
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+  }
+
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 10%;
+    top: 15px;
+  }
+
+  .nav-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    background-color: #0A222E;
+    text-align: center;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .auth-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+  }
+}
+
 
 /* Hero Section */
 .hero {
@@ -859,3 +924,5 @@ footer {
 html {
   scroll-behavior: smooth;
 }
+
+
